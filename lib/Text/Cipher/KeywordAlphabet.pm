@@ -2,15 +2,16 @@
 # Purpose : Substitution cipher based on a keyword alphabet
 # Author  : John Alden
 # Created : Jan 2005
-# CVS     : $Id: KeywordAlphabet.pm,v 1.4 2005/01/10 20:06:19 Alex Exp $
+# CVS     : $Id: KeywordAlphabet.pm,v 1.5 2005/03/20 20:02:11 aldenj20 Exp $
 ###############################################################################
 
 package Text::Cipher::KeywordAlphabet;
 
+use strict;
 use Text::Cipher;
 use Carp;
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = sprintf "%d.%03d", (q$Revision: 1.4 $ =~ /: (\d+)\.(\d+)/);
+$VERSION = sprintf "%d.%03d", (q$Revision: 1.5 $ =~ /: (\d+)\.(\d+)/);
 
 sub new {
 	my ($class, $keywords, $offset) = @_;
@@ -164,7 +165,7 @@ Reverse of encipher_array().
 =head1 VERSION
 
 See $Text::Cipher::KeywordAlphabet::VERSION.
-Last edit: $Revision: 1.4 $ on $Date: 2005/01/10 20:06:19 $
+Last edit: $Revision: 1.5 $ on $Date: 2005/03/20 20:02:11 $
 
 =head1 BUGS
 

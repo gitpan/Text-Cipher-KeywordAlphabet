@@ -1,3 +1,6 @@
+Sun Mar 20 23:16:42 2005 - 1.005
+    Added kwalitee POD tests and META.yml to dist.
+
 Mon Jan 10 20:26:12 2005 - 1.004
     Fixed typo in POD
 
