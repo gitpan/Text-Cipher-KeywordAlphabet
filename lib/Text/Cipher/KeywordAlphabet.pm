@@ -2,7 +2,7 @@
 # Purpose : Substitution cipher based on a keyword alphabet
 # Author  : John Alden
 # Created : Jan 2005
-# CVS     : $Id: KeywordAlphabet.pm,v 1.2 2005/01/09 16:06:52 aldenj20 Exp $
+# CVS     : $Id: KeywordAlphabet.pm,v 1.4 2005/01/10 20:06:19 Alex Exp $
 ###############################################################################
 
 package Text::Cipher::KeywordAlphabet;
@@ -10,7 +10,7 @@ package Text::Cipher::KeywordAlphabet;
 use Text::Cipher;
 use Carp;
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = sprintf "%d.%03d", (q$Revision: 1.2 $ =~ /: (\d+)\.(\d+)/);
+$VERSION = sprintf "%d.%03d", (q$Revision: 1.4 $ =~ /: (\d+)\.(\d+)/);
 
 sub new {
 	my ($class, $keywords, $offset) = @_;
@@ -75,16 +75,16 @@ Text::Cipher::KeywordAlphabet - Substitution cipher based on a keyword alphabet
 
 	#Create a keyword alphabet with a left shift of 5
 	$cipher = new Text::Cipher::KeywordAlphabet("the quick brown fox", -5);
-	
+
 	#Fetch the generated alphabet
 	$keyword_alphabet = $cipher->alphabet();
-	
+
 	#Encipher a string
 	$ciphered = $cipher->encipher($message);
 
 	#Decipher an enciphered message
 	$message = $cipher->decipher($ciphered);
-	
+
 	#Some convenience methods
 	$cipher->encipher_scalar(\$some_scalar);
 	$cipher->decipher_scalar(\$some_scalar);
@@ -96,7 +96,7 @@ Text::Cipher::KeywordAlphabet - Substitution cipher based on a keyword alphabet
 	#Other uses
 	$null_cipher = new Text::Cipher::KeywordAlphabet(); #no-op cipher
 	$rot13_cipher = new Text::Cipher::KeywordAlphabet(undef, 13); #Caesar cipher
-	
+
 =head1 DESCRIPTION
 
 This module generates a monoalphabetic substitution cipher from a set of words, resulting in what's sometimes referred to as a "keyword (generated) alphabet".
@@ -130,7 +130,7 @@ Return the keyword alphabet created by the constructor
 =item $ciphered = $obj->encipher($message)
 
 Enciphers a string using the keyword alphabet
- 
+
 =item $message = $obj->decipher($ciphered)
 
 Reverse of encipher()
@@ -164,9 +164,9 @@ Reverse of encipher_array().
 =head1 VERSION
 
 See $Text::Cipher::KeywordAlphabet::VERSION.
-Last edit: $Revision: 1.2 $ on $Date: 2005/01/09 16:06:52 $
+Last edit: $Revision: 1.4 $ on $Date: 2005/01/10 20:06:19 $
 
-=BUGS
+=head1 BUGS
 
 None known.  This module has not been used heavily in production so it's not impossible a bug may have slipped through the unit tests.
 Bug reports are welcome, particularly with patches & test cases.
